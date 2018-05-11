@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>耿朋的导航</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header></header>
+    <main>
+        <div id="mainDiv"></div>
+    </main>
+    <footer></footer>
+<script>
+    arr=[
+        ['q','w','e','r','t','y','u','i','o','p'],
+        ['a','s','d','f','g','h','j','k','l'],
+        ['z','x','c','v','b','n','m']
+    ]
+    hash={
+        'q':'qq.com',
+        'w':'weibo.com',
+        't':'taobao.com',
+        'a':'alibaba.com',
+        'j':'jd.com',
+        'z':'zhihu.com',
+        'x':'xunlei.com'   
+    }
+    index=0
+    while(index<arr.length){
+        var div1=document.createElement('div')
+        var div2=mainDiv.appendChild(div1)
+        index2=0
+        while(index2<arr[index].length){
+            var kbd1=document.createElement('kbd')
+            kbd1.textContent=arr[index][index2]
+            div2.appendChild(kbd1)
+            var button1=document.createElement('button')
+            kbd1.appendChild(button1)
+            button1.textContent="编辑"
+            button1.id=arr[index][index2]
+            document.onkeypress=function(dfshgofabsgn){
+                window.open('http://'+ hash[dfshgofabsgn.key],'_blank')
+            }
+            button1.onclick=function(dsdgadgdasg){
+               var website=prompt('给我一个网址')
+               var key=dsdgadgdasg['target']['id']
+               hash[key]=website
+               localStorage.setItem('xxx',JSON.stringify(hash))
+            }
+            var hashInLocalStorage=JSON.parse(localStorage.getItem('xxx')||null)
+            if (hashInLocalStorage){
+                hash=hashInLocalStorage
+            }
+            index2=index2+1
+        }
+        index=index+1
+    }
+    
+
+</script>
+</body>
+</html>
