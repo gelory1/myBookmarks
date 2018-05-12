@@ -2,21 +2,74 @@
     margin: 0;
     padding:0;
 }
+body{
+    background-image: url(./alum.png);
+    background-size: cover;
+}
 a{
     text-decoration: none;
 }
+button{
+    font-size: 10px;
+    width: 30px;
+    border:none;
+    background: rgba(255, 255, 255, 0.5);
+    color: white;
+    border-radius: 2px;
+    padding: 2px;
+}
+main{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 #mainDiv div kbd{
-    width: 4em;
-    height: 4em;
     display: inline-block;
-    border: thin solid red;
     position: relative;
+}
+#mainDiv div kbd:hover button{
+    display: inline-block;
 }
 #mainDiv div kbd button{
     position: absolute;
-    right: 0;
-    bottom: 0;
+    right: 5px;
+    bottom: 5px;
+    display: none;
 }
 #mainDiv{
     text-align: center;
+}
+#mainDiv .div1:nth-child(2){
+    margin-left: -20px;
+}
+#mainDiv .div1:nth-child(3){
+    margin-left: -120px;
+}
+#mainDiv .keyboard{
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    width: 90px;
+    height: 90px;
+    margin: 0 7.5px;
+    font-size: 30px;
+    font-family: Helvetica;
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.5);
+}
+#mainDiv .div1{
+    margin-bottom: 9px;
+    display: inline-block;
+}
+#mainDiv .div1 .keyboard span{
+    position: absolute;
+    left: 15px;
+    top:5px;
+}
+#mainDiv .div1 .keyboard img{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: 10px;
+    bottom: 5px;
 }
